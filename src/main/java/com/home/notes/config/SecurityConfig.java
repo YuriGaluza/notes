@@ -1,5 +1,6 @@
 package com.home.notes.config;
 
+import com.home.notes.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -38,9 +39,9 @@ public class SecurityConfig {
         return http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/users").hasRole("USER")
-                .requestMatchers("/api/v1/users").hasRole("ADMIN")
-                .requestMatchers("/admin").hasRole("ADMIN")
+                .requestMatchers("/api/v1/**").hasAnyRole(Role.ADMIN.name(), Role.USER.name())
+                .requestMatchers("/api/v1/**").hasAnyRole(Role.ADMIN.name(), Role.USER.name())
+                .requestMatchers("/admin").hasRole(Role.ADMIN.name())
                 .anyRequest().authenticated()
                 .and().httpBasic()
                 .and().build();
