@@ -1,28 +1,25 @@
-package com.home.notes.model;
+package com.home.notes.dto.request;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
-@Entity()
-public class User {
-    @Id
-    private Long id;
+public class AccountDtoRequest {
+    private String login;
     private String firstName;
     private String lastName;
 
-    public User() {}
+    public AccountDtoRequest() {}
 
-    public User(String firstName, String lastName) {
+    public AccountDtoRequest(String login, String firstName, String lastName) {
+        this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Long getId() {
-        return id;
+    public String getLogin() {
+        return login;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getFirstName() {

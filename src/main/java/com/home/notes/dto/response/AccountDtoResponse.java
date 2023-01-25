@@ -1,14 +1,25 @@
 package com.home.notes.dto.response;
 
-public class UserDtoResponse {
+public class AccountDtoResponse {
+    private String login;
     private String firstName;
     private String lastName;
 
-    public UserDtoResponse() {}
+    public AccountDtoResponse() {
+    }
 
-    public UserDtoResponse(String firstName, String lastName) {
+    public AccountDtoResponse(String login, String firstName, String lastName) {
+        this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getFirstName() {
