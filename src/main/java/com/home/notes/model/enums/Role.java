@@ -1,5 +1,6 @@
-package com.home.notes.model;
+package com.home.notes.model.enums;
 
+import com.home.notes.model.enums.Permission;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Set;

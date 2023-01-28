@@ -1,4 +1,4 @@
-package com.home.notes.model;
+package com.home.notes.model.enums;
 
 public enum Permission {
     ACCOUNTS_READ("accounts:read"),

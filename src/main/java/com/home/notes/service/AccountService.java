@@ -6,11 +6,13 @@ import com.home.notes.dto.response.AccountDtoResponse;
 import com.home.notes.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Service
 @Component
 public class AccountService {
 
