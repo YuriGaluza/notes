@@ -36,7 +36,7 @@ public class User implements UserDetails {
   @OneToMany(mappedBy = "user")
   private Set<Comment> comments;
   @Column(name = "role")
-  @Enumerated(EnumType.STRING)
+  @Enumerated(value = EnumType.STRING)
   private Role role;
   @OneToMany(mappedBy = "user")
   private Set<Token> tokens;
@@ -44,6 +44,9 @@ public class User implements UserDetails {
   private Set<Note> notes;
   @Column(name = "active")
   private Boolean isActive;
+
+  public User() {
+  }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -82,9 +85,6 @@ public class User implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
-  }
-
-  public User() {
   }
 
   public Long getId() {

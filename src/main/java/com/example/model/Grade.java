@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 
 public class Grade {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue
     private Long id;
     @Column(name = "value")
     private Integer value;

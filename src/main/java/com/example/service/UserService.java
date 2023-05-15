@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.exception.UserNotFoundException;
 import com.example.model.User;
 import com.example.repository.TokenRepository;
 import com.example.repository.UserRepository;
@@ -37,10 +38,10 @@ public class UserService {
         return isAddedToFollowing;
     }
 
-    private User getCurrentUser() throws Exception {
+    public User getCurrentUser() throws UserNotFoundException {
         User currentUser = userRepository.findByLogin(getUserDetails().getUsername()).orElse(null);
         if (currentUser == null) {
-            throw new Exception("User is not found");
+            throw new UserNotFoundException("User is not found");
         }
         return currentUser;
     }
